@@ -95,10 +95,14 @@ During active load, `provider-c` was terminated mid-run. The circuit breaker tri
 ## Dashboard Screenshots
 
 ### 1. Real-Time Overview Dashboard
-![Overview Dashboard](file:///c:/Users/saten/OneDrive/Documents/projects/AI%20API%20Gateway/docs/screenshots/overview.png)
+![Overview Dashboard](docs/screenshots/overview.png)
 
 ### 2. Provider Health & Circuit Breaker Failover
-![Provider Failover Active](file:///c:/Users/saten/OneDrive/Documents/projects/AI%20API%20Gateway/docs/screenshots/provider-down.png)
+![Provider Failover Active](docs/screenshots/provider-down.png)
+
+### 3. Live Vercel Deployment
+[![Live Vercel Dashboard](docs/screenshots/vercel-dashboard.png)](https://ai-gateway-seven-pi.vercel.app/)
+> Hosted live at [https://ai-gateway-seven-pi.vercel.app/](https://ai-gateway-seven-pi.vercel.app/)
 
 ---
 
