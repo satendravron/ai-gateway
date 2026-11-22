@@ -6,6 +6,8 @@ A resilient, high-performance Node.js API Gateway that load-balances LLM request
 
 ## Demo
 
+- **Live Dashboard (Vercel)**: [https://ai-gateway-seven-pi.vercel.app/](https://ai-gateway-seven-pi.vercel.app/)
+
 ![demo](docs/demo.gif)
 
 ---
