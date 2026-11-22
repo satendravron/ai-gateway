@@ -1,0 +1,16 @@
+{
+  "name": "ai-gateway-root",
+  "private": true,
+  "workspaces": ["packages/*", "apps/*", "bench"],
+  "scripts": {
+    "dev": "bash scripts/start-all.sh",
+    "build": "npm run build --workspaces --if-present",
+    "test": "npm run test --workspaces --if-present",
+    "bench": "npm run bench -w bench",
+    "dev:gateway": "npm run dev -w apps/gateway",
+    "dev:worker": "npm run dev -w apps/worker",
+    "dev:api": "npm run dev -w apps/api",
+    "dev:mock": "npm run dev -w apps/mock-providers",
+    "dev:dashboard": "npm run dev -w apps/dashboard"
+  }
+}
