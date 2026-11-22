@@ -1,0 +1,49 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v*'
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Node.js 20
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: 'npm'
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build all packages
+        run: npm run build
+
+      - name: Run test suite
+        run: npm run test
+
+      - name: Package release archives
+        run: |
+          tar -czf dashboard-dist.tar.gz -C apps/dashboard dist
+          tar -czf gateway-dist.tar.gz -C apps/gateway dist
+          tar -czf api-dist.tar.gz -C apps/api dist
+          tar -czf worker-dist.tar.gz -C apps/worker dist
+
+      - name: Create GitHub Release
+        uses: softprops/action-gh-release@v2
+        with:
+          files: |
+            dashboard-dist.tar.gz
+            gateway-dist.tar.gz
+            api-dist.tar.gz
+            worker-dist.tar.gz
+          generate_release_notes: true
+          draft: false
+          prerelease: false
